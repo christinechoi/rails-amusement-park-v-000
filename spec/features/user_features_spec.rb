@@ -3,10 +3,14 @@ require_relative "../rails_helper.rb"
 describe 'Feature Test: User Signup', :type => :feature do
 
   it 'successfully signs up as non-admin' do
+    
     visit_signup
     expect(current_path).to eq('/users/new')
+    
     user_signup
+    
     expect(current_path).to eq('/users/1')
+    
     expect(page).to have_content("Amy Poehler")
     expect(page).to have_content("Mood")
     expect(page).to have_content("happy")

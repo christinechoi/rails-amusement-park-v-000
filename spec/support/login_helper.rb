@@ -2,10 +2,12 @@ module LoginHelper
 
   def visit_signup
     visit '/'
+    # binding.pry
     click_link('Sign up')
   end
 
   def user_signup
+    
     fill_in("user[name]", :with => "Amy Poehler")
     fill_in("user[height]", :with => "58")
     fill_in("user[happiness]", :with => "3")
