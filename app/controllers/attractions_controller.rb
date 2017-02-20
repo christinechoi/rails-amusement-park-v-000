@@ -5,6 +5,7 @@ class AttractionsController < ApplicationController
   end
 
   def index
+    @attractions = Attraction.all
   end
 
   def show

@@ -1,2 +1,13 @@
 <h1>Attractions#index</h1>
+
+<% @attractions.each do |attraction| %>
+  Name: <%= attraction.name %>
+  Minimum Height: <%= attraction.min_height%>
+  Nausea Rating: <%= attraction.nausea_rating %>
+  Happiness Rating: <%= attraction.happiness_rating %>
+  Tickets: <%= attraction.tickets %>
+
+<% end %>
+
+
 <p>Find me in app/views/attractions/index.html.erb</p>
