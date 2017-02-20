@@ -7,13 +7,14 @@ module LoginHelper
   end
 
   def user_signup
-    
+
     fill_in("user[name]", :with => "Amy Poehler")
     fill_in("user[height]", :with => "58")
     fill_in("user[happiness]", :with => "3")
     fill_in("user[nausea]", :with => "2")
     fill_in("user[tickets]", :with => "15")
     fill_in("user[password]", :with => "password")
+    # binding.pry 
     click_button('Create User')
   end
 

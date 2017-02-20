@@ -10,7 +10,7 @@ describe 'Feature Test: User Signup', :type => :feature do
     user_signup
     
     expect(current_path).to eq('/users/1')
-    
+
     expect(page).to have_content("Amy Poehler")
     expect(page).to have_content("Mood")
     expect(page).to have_content("happy")
@@ -28,6 +28,7 @@ describe 'Feature Test: User Signup', :type => :feature do
     visit_signin
     expect(current_path).to eq('/signin')
     user_login
+    # binding.pry
     expect(current_path).to eq('/users/1')
     expect(page).to have_content("Mindy")
     expect(page).to have_content("Mood")
