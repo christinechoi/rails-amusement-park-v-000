@@ -1,5 +1,9 @@
 <h1>Users#show</h1>
 
+<% if @current_user %>
+  Signed in as ADMIN
+<% end %>
+
 <h3> Your Profile: </h3>
   Name: <%= @user.name %><br>
   Mood: <%= @user.mood %><br>
