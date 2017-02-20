@@ -9,15 +9,15 @@ Rails.application.routes.draw do
 
   # get 'sessions/new'
 
-  get 'attractions/new'
+  # get 'attractions/new'
 
-  get 'attractions/index'
+  # get 'attractions/index', to: 'attractions#index'
 
-  get 'attractions/show'
+  # get 'attractions/show'
 
-  get 'attractions/create'
+  # get 'attractions/create'
 
-  get 'attractions/update'
+  # get 'attractions/update'
 
   # get 'users/update'
 
@@ -33,5 +33,6 @@ Rails.application.routes.draw do
 
   root to: 'users#index'
   resources :users
+  resources :attractions 
 
 end
