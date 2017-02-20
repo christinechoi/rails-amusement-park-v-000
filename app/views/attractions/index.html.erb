@@ -2,13 +2,19 @@
 
 
 <% if current_user %>
-  <%= link_to 'New Attraction', new_attraction_path %>
+  <%= link_to 'New Attraction', new_attraction_path %><br>
+  
+
 <% end %>
 
 <% @attractions.each do |attraction| %>
 
   Name: <%= attraction.name %>
-  <%= link_to "Go on ", attraction_path(attraction) %>
+  <% if current_user %>
+    <%= link_to "Show #{attraction.name} ", attraction_path(attraction) %>
+  <% end %>
+
+  <%= link_to "Go on #{attraction.name} ", attraction_path(attraction) %>
  
   Minimum Height: <%= attraction.min_height %>
   Nausea Rating: <%= attraction.nausea_rating %>
