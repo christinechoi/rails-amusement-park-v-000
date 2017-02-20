@@ -3,6 +3,8 @@
 <% if @current_user %>
   Signed in as ADMIN
 <% end %>
+<%= link_to 'Log Out', '/signout' %></br>
+
 
 <h3> Your Profile: </h3>
   Name: <%= @user.name %><br>
