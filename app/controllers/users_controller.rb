@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      redirect_to action: "show"
+      redirect_to user_path(@user)
     end
   end
 
@@ -24,9 +24,10 @@ class UsersController < ApplicationController
     if current_user.nil?
       redirect_to '/'
     else
-
-    @user = User.find(params[:id])
+      # binding.pry
+      @user = User.find(params[:id])
     end
+
   end
 
   def update
@@ -42,10 +43,10 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :happiness, :nausea, :height, :tickets, :password)
   end
 
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
-  end
+  # def correct_user
+  #   @user = User.find(params[:id])
+  #   redirect_to(root_url) unless current_user?(@user)
+  # end
 
   def logged_in_user
     unless logged_in?

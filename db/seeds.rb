@@ -1,4 +1,4 @@
-# coding: utf-8
+  # coding: utf-8
 DATA = {
   :user_keys =>
     ["name", "nausea", "happiness", "tickets", "height", "password"],
