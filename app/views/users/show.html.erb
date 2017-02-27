@@ -5,6 +5,9 @@
 <% end %><br>
 <%= link_to 'Log Out', '/signout' %></br>
 
+<% if flash[:notice] %>
+   <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
 <h3> Your Profile: </h3>
   Name: <%= @user.name %><br>

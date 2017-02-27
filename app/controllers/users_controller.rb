@@ -33,21 +33,21 @@ class UsersController < ApplicationController
   end
 
   def update
-    
     @attraction = Attraction.find(params[:attraction_id])
     # binding.pry
-    current_user.tickets = current_user.tickets - @attraction.tickets 
-    current_user.nausea = current_user.nausea + @attraction.nausea_rating
-    current_user.happiness = current_user.happiness - @attraction.happiness_rating 
-    # binding.pry
-    current_user.mood
-
-    # = "sad" if current_user.nausea > current_user.happiness 
-
-    current_user.save
-    # binding.pry
+    if current_user.tickets < @attraction.tickets
+      flash.notice = "You do not have enough tickets to ride the #{@attraction.name}"
+    elsif current_user.height < @attraction.min_height
+      flash.notice = "You are not tall enough to ride the #{@attraction.name}"
+    else
+      current_user.tickets = current_user.tickets - @attraction.tickets 
+      current_user.nausea = current_user.nausea + @attraction.nausea_rating
+      current_user.happiness = current_user.happiness - @attraction.happiness_rating 
+      current_user.mood
+      current_user.save
+      flash.notice = "Thanks for riding the #{@attraction.name}!"
+    end
     redirect_to user_path(current_user)
-
 
   end
 
