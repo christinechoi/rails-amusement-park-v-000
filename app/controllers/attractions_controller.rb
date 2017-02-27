@@ -1,7 +1,7 @@
 class AttractionsController < ApplicationController
   before_filter :authorize, only: [:edit, :update]
-
   before_action :require_login
+
 
   def new
     @attraction = Attraction.new 
@@ -37,8 +37,6 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.find(params[:id])
     @attraction.update(attraction_params)
     redirect_to attraction_path(@attraction)
-
-
   end
 
 

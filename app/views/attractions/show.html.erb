@@ -13,7 +13,9 @@ Nausea Rating: <%= @attraction.nausea_rating %><br>
 Tickets: <%= @attraction.tickets %><br>
 Minimum Height: <%= @attraction.name %><br>
 
-<%= button_to 'Go on this ride', user_path(current_user), :method => :get %>
+<%= button_to 'Go on this ride', user_path(current_user), :method => :patch, params: {attraction_id: @attraction.id} %>
+
+
 
 
 <p>Find me in app/views/attractions/show.html.erb</p>
